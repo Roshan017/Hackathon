@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon_Whatsapp</title>
+    <link rel="stylesheet" href="wh.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="img_t">WhatsApp</h1>
+        <br>
+        <br>
+        <input class="field" placeholder="Number" type="text" id="idInput">
+        <br>
+        <button id="btn" onclick="showProfile()">CHECK</button>
+    </div>
+    <div id="Result">
+        <div id="nam">
+            <img id="img_pe" src="images/Unknown_person.jpg" alt="img">
+            <p class="txt_ig" style="color: white;">Name: <label id="lal-1">NULL</label></p>
+            <p class="txt_ig" style="color: white;">Number: <label id="lal-2">NULL</label></p>
+            <div id="det">
+                <p class="txt_ig">Last Online: <span id="followers">0</span></p>
+                <p class="txt_ig">Chats: <span id="following">0</span></p>
+                <p class="txt_ig">Calls Made: <span id="lastActive">N/A</span></p>
+                <p class="txt_ig">Calls Received: <span id="numPosts">0</span></p>
+                <p class="txt_ig">Status: <span id="status">N/A</span></p>
+            </div>
+            <button id="rp" onclick="alert('Person has been reported')">Report</button>
+        </div>
+    </div>
+
+    <script>
+        function showProfile() {
+            // Get the value from the input field
+            const id = document.getElementById("idInput").value;
+
+            // You can add logic here to fetch WhatsApp profile data based on the provided number
+            // For this example, we'll just update the displayed data with some placeholders
+            if (id == 9188470264) {
+                document.getElementById("lal-1").textContent = "Roshan P Mathew";
+                document.getElementById("lal-2").textContent = id;
+                document.getElementById("followers").textContent = "10 mins";
+                document.getElementById("following").textContent = "30";
+                document.getElementById("lastActive").textContent = "10";
+                document.getElementById("numPosts").textContent = "47";
+                document.getElementById("status").textContent = "Authentic";
+            }
+            if (id == 1010101000) {
+                document.getElementById("lal-1").textContent = 'Unknown';
+                document.getElementById("lal-2").textContent = id;
+                document.getElementById("followers").textContent = "Online";
+                document.getElementById("following").textContent = "99";
+                document.getElementById("lastActive").textContent = "106";
+                document.getElementById("numPosts").textContent = "00";
+                document.getElementById("status").textContent = "Fake";
+            }
+
+            // Show the profile result div
+            document.getElementById("Result").style.display = "flex";
+        }
+    </script>
+</body>
+</html>
